@@ -33,5 +33,11 @@ todoSchema.methods = {
     },
 }
 
+// Static methods
+todoSchema.methods = {
+    findByJS: function(){
+        return this.find({title: /js/i});
+    }
+} 
 // Export todoSchema here
 module.exports = todoSchema;

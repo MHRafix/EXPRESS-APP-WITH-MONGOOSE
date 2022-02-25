@@ -24,6 +24,14 @@ router.get('/active-callback', (req, res) => {
         })
     });
 });
+
+// Get todos with "js" title using static method
+router.get('/js', async (req, res) => {
+    const data = await Todo.findByJS();
+    res.status(200).res.json({
+        data,
+    })
+})
 // Get all todos here
 router.get('/', (req, res) => {
     Todo.find({}),select({
