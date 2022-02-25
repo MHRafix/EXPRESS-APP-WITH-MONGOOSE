@@ -18,7 +18,7 @@ router.get('/active', async (req, res) => {
 // Get active todos using callback instance here
 router.get('/active-callback', (req, res) => {
     const todo = new Todo();
-    todo.findActive((err, data) => {
+    todo.findActiveCallback((err, data) => {
         res.status(200).json({
             data,
         })
