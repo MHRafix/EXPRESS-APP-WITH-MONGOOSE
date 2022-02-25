@@ -18,5 +18,20 @@ const todoSchema = mongoose.Schema({
 });
 
 
+// Let's make instance here
+todoSchema.methods = {
+    findActive: function(){
+        return mongoose.model("Todo").find({
+            satus: 'active'
+        });
+    },
+    
+    findActiveCallback: function(cb){
+        return mongoose.model("Todo").find({
+            satus: 'active'
+        }, cb);
+    },
+}
+
 // Export todoSchema here
 module.exports = todoSchema;
